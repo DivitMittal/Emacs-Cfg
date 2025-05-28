@@ -1,6 +1,6 @@
 {
   description = "Emacs-Cfg flake";
-  outputs = {...} @ inputs: let
+  outputs = inputs: let
     inherit (inputs.flake-parts.lib) mkFlake;
     specialArgs.customLib = inputs.OS-nixCfg.lib;
   in

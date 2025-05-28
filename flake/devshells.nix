@@ -8,7 +8,7 @@
   perSystem = {pkgs, ...}: {
     devshells.default = {
       packages = lib.attrsets.attrValues {
-        elisp-autofmt = pkgs.emacsPackages.elisp-autofmt;
+        inherit (pkgs.emacsPackages) elisp-autofmt;
       };
     };
   };
