@@ -11,17 +11,16 @@
     };
 
     workflows = let
-      on = {
+      on = rec {
         push = {
           branches = ["main"];
-          paths-ignore = [
-            "**/*.md"
-            ".github/**"
+          paths = [
+            "flake.nix"
+            "flake.lock"
+            "flake/**"
           ];
         };
-        pull_request = {
-          branches = ["main"];
-        };
+        pull_request = push;
         workflow_dispatch = {};
       };
       permissions = {

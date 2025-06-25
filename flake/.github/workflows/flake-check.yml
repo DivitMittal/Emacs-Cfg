@@ -23,9 +23,6 @@ jobs:
     - flake.nix
     - flake.lock
     - flake/**
-    paths-ignore:
-    - '**/*.md'
-    - .github/**
   push:
     branches:
     - main
@@ -33,7 +30,4 @@ jobs:
     - flake.nix
     - flake.lock
     - flake/**
-    paths-ignore:
-    - '**/*.md'
-    - .github/**
   workflow_dispatch: {}
