@@ -3,7 +3,7 @@
 
   flake.actions-nix = {
     pre-commit.enable = true;
-    defaults = {
+    defaultValues = {
       jobs = {
         runs-on = "ubuntu-latest";
         timeout-minutes = 30;
@@ -14,17 +14,26 @@
       on = rec {
         push = {
           branches = ["main"];
-          paths = [
-            "flake.nix"
-            "flake.lock"
-            "flake/**"
+          paths-ignore = [
+            ## Markup
+            "**/*.md"
+            "**/*.adoc"
+            ## Images
+            "**/*.jpeg"
+            "**/*.jpg"
+            "**/*.png"
+            "**/*.svg"
+            ## Github Actions
+            ".github/**"
+            ## git
+            ".git*"
           ];
         };
         pull_request = push;
         workflow_dispatch = {};
       };
       permissions = {
-        contents = "read";
+        contents = "write";
         id-token = "write";
       };
       common-actions = [
@@ -51,7 +60,7 @@
             ++ [
               {
                 name = "Run nix flake check";
-                run = "nix flake check --impure --all-systems --no-build";
+                run = "nix -vL flake check --impure --all-systems --no-build";
               }
             ];
         };

@@ -1,5 +1,6 @@
 {
   description = "Emacs-Cfg flake";
+
   outputs = inputs: let
     inherit (inputs.flake-parts.lib) mkFlake;
     specialArgs.customLib = inputs.OS-nixCfg.lib;
@@ -10,7 +11,7 @@
     });
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     systems.url = "github:nix-systems/default";
     devshell = {
