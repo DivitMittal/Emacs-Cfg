@@ -1,5 +1,3 @@
-# Agent Instructions for Emacs-Cfg
-
 ## Overview
 Doom Emacs configuration for OS-nixCfg, managed via Nix flakes and nix-doom-emacs-unstraightened.
 
@@ -10,9 +8,6 @@ Doom Emacs configuration for OS-nixCfg, managed via Nix flakes and nix-doom-emac
 - **Pre-commit**: Hooks run automatically; manual: `nix flake check`
 
 ## Code Style
-- **Indentation**: 2 spaces (all files), configured in `.editorconfig`
-- **Line endings**: LF only, trim trailing whitespace, final newline required
-- **Encoding**: UTF-8
 - **Elisp**: Use `lexical-binding: t`, follow Doom conventions, wrap configs in `after!` blocks
 - **Nix**: Follow alejandra formatting, no dead code (deadnix), no anti-patterns (statix)
 - **Comments**: Elisp uses `;;` for regular comments, `;;;` for file headers
