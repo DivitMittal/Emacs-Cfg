@@ -26,3 +26,7 @@
 ---
 
 An elisp [GNU Emacs](https://www.gnu.org/software/emacs/) configuration for [Doom](https://github.com/doomemacs/doomemacs) for [OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg) via [nix home-manager module, i.e., nix-doom-emacs-unstraightened](https://github.com/marienz/nix-doom-emacs-unstraightened)
+
+## Related Repositories
+
+- [DivitMittal/OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg): Main Nix configurations repository
