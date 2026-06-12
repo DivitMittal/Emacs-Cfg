@@ -1,0 +1,23 @@
+name: emacs-cfg
+version: 1.0.0
+description: Doom Emacs configuration for OS-nixCfg, managed via Nix flakes and nix-doom-emacs-unstraightened
+author: DivitMittal
+license: MIT
+target: all
+type: instructions
+
+dependencies:
+  mcp:
+    - name: serena
+      registry: false
+      transport: stdio
+      command: uvx
+      args:
+        - --from
+        - git+https://github.com/oraios/serena
+        - serena
+        - start-mcp-server
+        - --context
+        - claude-code
+        - --project
+        - ~/Projects/Cfgs/Emacs-Cfg/
