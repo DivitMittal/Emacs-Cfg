@@ -1,3 +1,8 @@
+---
+description: Project knowledge for Doom Emacs configuration managed via Nix flakes and nix-doom-emacs-unstraightened
+applyTo: "**"
+---
+
 ## Overview
 Doom Emacs configuration for OS-nixCfg, managed via Nix flakes and nix-doom-emacs-unstraightened.
 
