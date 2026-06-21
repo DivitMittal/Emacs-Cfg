@@ -3,7 +3,10 @@ version: 1.0.0
 description: Doom Emacs configuration for OS-nixCfg, managed via Nix flakes and nix-doom-emacs-unstraightened
 author: DivitMittal
 license: MIT
-target: all
+target:
+  - claude
+  - codex
+  - opencode
 type: instructions
 
 dependencies:

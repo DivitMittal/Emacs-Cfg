@@ -1,0 +1,26 @@
+lockfile_version: '1'
+generated_at: '2026-06-21T18:00:50.410511+00:00'
+dependencies: []
+mcp_servers:
+- serena
+mcp_configs:
+  serena:
+    name: serena
+    transport: stdio
+    args:
+    - --from
+    - git+https://github.com/oraios/serena
+    - serena
+    - start-mcp-server
+    - --context
+    - claude-code
+    - --project
+    - ~/Projects/Cfgs/Emacs-Cfg/
+    registry: false
+    command: uvx
+local_deployed_files:
+- .claude/rules/flake-context.md
+- .claude/rules/project-knowledge.md
+local_deployed_file_hashes:
+  .claude/rules/flake-context.md: sha256:adda734a2857a064bba92d2208c91b65da2554b8d201e2f07d6c1dc1a15dc01f
+  .claude/rules/project-knowledge.md: sha256:4e1c43ff6d30e653e00881871ef8a6a7ea4920454b5498e41b5ec7078287ca23
