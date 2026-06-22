@@ -8,7 +8,7 @@
       workflow_dispatch = {};
       schedule = [
         {
-          cron = "0 0 * * 0"; # Every Sunday at midnight
+          cron = "0 0 1-7 * 0"; # First Sunday of every month at midnight
         }
       ];
     };
