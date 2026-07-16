@@ -26,6 +26,8 @@
             ### LSPs & Formatters
             nixd
             alejandra
+            ## AI context
+            apm-cli
             ;
         };
       };

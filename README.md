@@ -30,3 +30,6 @@ An elisp [GNU Emacs](https://www.gnu.org/software/emacs/) configuration for [Doo
 ## Related Repositories
 
 - [DivitMittal/OS-nixCfg](https://github.com/DivitMittal/OS-nixCfg): Main Nix configurations repository
+## For AI Agents
+
+Context files (`AGENTS.md`, `CLAUDE.md`) are generated — not committed. Run `apm compile` before exploring the repo to get directory-level guidance.
