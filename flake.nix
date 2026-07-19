@@ -42,5 +42,9 @@
       };
     };
     import-tree.url = "github:vic/import-tree";
+    OS-nixCfg = {
+      url = "github:DivitMittal/OS-nixCfg";
+      flake = false;
+    };
   };
 }
