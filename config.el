@@ -28,6 +28,13 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-ayu-dark)
 
+;; Let the terminal's own (possibly translucent) background show through
+;; instead of painting the theme's background colour over it.
+(defun +tty-transparent-bg-h (&optional frame)
+  (unless (display-graphic-p frame)
+    (set-face-background 'default "unspecified-bg" frame)))
+(add-hook 'doom-load-theme-hook #'+tty-transparent-bg-h)
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
