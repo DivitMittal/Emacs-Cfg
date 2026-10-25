@@ -22,7 +22,6 @@ in {
           '';
         };
         packages = lib.attrsets.attrValues {
-          inherit (pkgs.emacs.pkgs) elisp-autofmt;
           inherit
             (pkgs)
             ### LSPs & Formatters
