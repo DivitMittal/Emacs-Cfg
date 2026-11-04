@@ -5,6 +5,10 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
+;; org-roam-ui tracks the latest org-roam, which Doom's pin can lag behind
+(unpin! org-roam)
+(package! org-roam-ui)
+
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
