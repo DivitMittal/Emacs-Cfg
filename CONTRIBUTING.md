@@ -5,13 +5,13 @@ Contributions are welcome — bug reports, fixes, and improvements to the Emacs 
 ## Setup
 
 ```sh
-nix develop   # enter dev shell (nixd, alejandra, elisp-autofmt)
+nix develop   # enter dev shell (nixd, alejandra)
 ```
 
 ## Guidelines
 
 - **Nix files**: format with `alejandra` (enforced by pre-commit)
-- **Emacs Lisp files**: format with `elisp-autofmt` (enforced by pre-commit)
+- **Emacs Lisp files**: follow Doom conventions (no formatter is enforced)
 - Run `nix flake check` before submitting — CI runs the same check
 - Test changes with an actual Emacs instance before submitting
 
