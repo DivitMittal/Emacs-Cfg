@@ -34,7 +34,44 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org")
+;; Shared with Neovim (see Vim-Cfg/lua/plugins/org.lua) and synced with the vault.
+;; `org-roam-directory' defaults to "roam" under this, which is where org-roam.nvim writes.
+(setq org-directory "~/Sync/Vaults/Main/org")
+
+;; Graph view of the roam notes; the PKMS devshell's `org-graph` launches it.
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        ;; `org-roam-ui-open' opens the browser itself; leaving this on opens a second tab
+        org-roam-ui-open-on-start nil))
+
+;; Same keys, files and bodies as `org_capture_templates' in Vim-Cfg, so a capture lands in the
+;; same place from either editor. %U (date + time): when a thought was recorded matters.
+;; Relative targets resolve against `org-directory'.
+(after! org
+  (setq org-capture-templates
+        '(("t" "Task" entry (file "inbox.org")
+           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
+          ("n" "Note" entry (file "inbox.org")
+           "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:")
+          ;; Interstitial log: one line whenever focus changes
+          ("j" "Journal" entry (file+olp+datetree "journal.org")
+           "* %U %?")
+          ("r" "Reply to someone" entry (file "people.org")
+           "* TODO Reply to %^{Who}%?\nDEADLINE: %^{Reply by}t\n:PROPERTIES:\n:CREATED: %U\n:END:")
+          ;; Neovim can't clock in from a capture; there it's a manual <leader>Oxi
+          ("c" "Clocked work" entry (file+olp+datetree "journal.org")
+           "* STRT %^{Working on}\n:PROPERTIES:\n:CREATED: %U\n:END:\n%?"
+           :clock-in t :clock-resume t))
+        ;; Morning view, matching Neovim's "d": today, what's in progress, what's blocked
+        org-agenda-custom-commands
+        '(("d" "Daily"
+           ((agenda "" ((org-agenda-span 'day) (org-agenda-overriding-header "Today")))
+            (todo "STRT" ((org-agenda-overriding-header "In progress")))
+            (todo "WAIT" ((org-agenda-overriding-header "Waiting on"))))))))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
