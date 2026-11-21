@@ -7,9 +7,9 @@ applyTo: "flake/**"
 
 Files in this directory:
 
-- `formatters.nix` — treefmt config covering alejandra, deadnix, and statix for Nix files, plus `elisp-autofmt` (sourced from `pkgs.emacs.pkgs.elisp-autofmt`) for Emacs Lisp files.
+- `formatters.nix` — treefmt config covering alejandra, deadnix, and statix for Nix files.
 - `checks.nix` — pre-commit hooks (whitespace trimming, large-file guard, merge-conflict detection, etc.).
-- `devshells.nix` — devshell providing nixd, alejandra, elisp-autofmt, and apm-cli; activated automatically via direnv.
+- `devshells.nix` — devshell providing nixd, alejandra, and apm-cli; activated automatically via direnv.
 - `actions/` — GitHub Actions workflows generated via actions-nix. **Never edit `.github/workflows/` by hand**; modify the source files here and let the generator produce the YAML.
 
 Workflow:
